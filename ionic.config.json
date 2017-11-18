@@ -1,0 +1,8 @@
+{
+  "name": "flowi",
+  "app_id": "0e0e0956",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
