@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { FloWi } from './app.component';
+import { HubPage } from "../pages/hub/hub";
 
 // Firebase
 import { AngularFireModule } from "angularfire2";
@@ -24,7 +25,8 @@ const config = {
 
 @NgModule({
   declarations: [
-    FloWi
+    FloWi,
+    HubPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ const config = {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    FloWi
+    FloWi,
+    HubPage
   ],
   providers: [
     StatusBar,

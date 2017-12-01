@@ -3,11 +3,13 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HubPage } from "../pages/hub/hub";
+
 @Component({
   templateUrl: 'app.html'
 })
 export class FloWi {
-  rootPage:any;
+  rootPage:any = HubPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,4 +20,3 @@ export class FloWi {
     });
   }
 }
-
