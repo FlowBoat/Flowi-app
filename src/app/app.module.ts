@@ -24,7 +24,7 @@ const config = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(FloWi),
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(config, 'flowi'),
     AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
