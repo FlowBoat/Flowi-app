@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 
+// Services
+import { FirestoreService } from '../shared/firestore.service';
+
 import { FloWi } from './app.component';
 
 const config = {
@@ -27,7 +30,8 @@ const config = {
     BrowserModule,
     IonicModule.forRoot(FloWi),
     AngularFireModule.initializeApp(config, 'flowi'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FirestoreService
   ],
   bootstrap: [IonicApp],
   entryComponents: [
