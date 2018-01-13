@@ -13,6 +13,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 // Services
 import { FirestoreService } from '../services/firestore.service';
+import { DealsService } from '../services/deals.service';
+
+// Pipes
+import { DocPipe } from '../pipes/doc.pipe';
 
 const config = {
   apiKey: "AIzaSyD_TECDbtRmwJTSGJcZQ85Q5YLuNdjRtdY",
@@ -26,13 +30,14 @@ const config = {
 @NgModule({
   declarations: [
     FloWi,
-    HubPage
+    HubPage,
+    DocPipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(FloWi),
     AngularFireModule.initializeApp(config, 'flowi'),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,6 +48,7 @@ const config = {
     StatusBar,
     SplashScreen,
     FirestoreService,
+    DealsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
