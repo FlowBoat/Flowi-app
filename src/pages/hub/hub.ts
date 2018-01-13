@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-// Services
 import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
@@ -13,4 +12,12 @@ export class HubPage {
   constructor(public navCtrl: NavController, private db: FirestoreService) {
   }
 
+  doInfinite(infiniteScroll) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      infiniteScroll.complete();
+    }, 500);
+  }
 }
