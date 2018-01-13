@@ -1,20 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-/**
- * Generated class for the DealsCardComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+import { trigger, keyframes, animate, transition } from '@angular/animations';
+import * as kf from './keyframes';
+import { Deal } from '../../../imports/models/deal';
+
 @Component({
   selector: 'deals-card',
-  templateUrl: 'deals-card.html'
+  templateUrl: 'deals-card.html',
+  animations: [
+    trigger('cardAnimator', [
+      transition('* => slideOutLeft', animate(500, keyframes(kf.slideOutLeft)))
+    ])
+  ]
 })
 export class DealsCardComponent {
 
-  text: string;
+  @Input() deal: Deal;
 
-  constructor() {
+  animationState: string;
+
+  startAnimation(state) {
+    console.log(state);
+    if(!this.animationState){
+      this.animationState = state
+    }
   }
 
+  resetAnimationState() {
+    this.animationState = '';
+  }
 }

@@ -1,0 +1,17 @@
+<ion-card
+  [@cardAnimator]="animationState"
+  (@cardAnimator.done)="resetAnimationState()"
+  (swipeleft)="startAnimation('slideOutLeft')">
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="deal.image.src">
+    </ion-avatar>
+    <h2>{{ (deal.business | doc | async)?.name }}</h2>
+    <p>{{ deal.createdAt.toDateString() }}</p>
+  </ion-item>
+
+  <img [src]="deal.image.src">
+
+  <ion-card-header>{{ deal.name }}</ion-card-header>
+  <ion-card-content><p>{{ deal.description }}</p></ion-card-content>
+</ion-card>
