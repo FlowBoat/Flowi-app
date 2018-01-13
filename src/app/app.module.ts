@@ -19,6 +19,9 @@ import { DealsService } from '../services/deals.service';
 // Pipes
 import { DocPipe } from '../pipes/doc.pipe';
 
+// Components
+import { ComponentsModule } from '../components/components.module';
+
 const config = {
   apiKey: "AIzaSyD_TECDbtRmwJTSGJcZQ85Q5YLuNdjRtdY",
   authDomain: "flowiapp.firebaseapp.com",
@@ -37,6 +40,7 @@ const config = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(FloWi),
+    ComponentsModule,
     AngularFireModule.initializeApp(config, 'flowi'),
     AngularFirestoreModule.enablePersistence(),
     BrowserAnimationsModule
