@@ -5,11 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { FloWi } from './app.component';
-import { HubPage } from "../pages/hub/hub";
+import { HubPage } from '../pages/hub/hub';
 
 // Firebase
-import { AngularFireModule } from "angularfire2";
-import { AngularFirestoreModule } from "angularfire2/firestore";
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 // Services
 import { FirestoreService } from '../shared/firestore.service';
