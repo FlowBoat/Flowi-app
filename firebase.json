@@ -1,9 +1,6 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
   "hosting": {
-    "public": "www",
+    "public": "platforms/browser/www",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -21,6 +18,7 @@
     "indexes": "firestore.indexes.json"
   },
   "functions": {
-    "predeploy": "npm --prefix functions run build"
+    "predeploy": "npm --prefix functions run build",
+    "source": "functions"
   }
 }
