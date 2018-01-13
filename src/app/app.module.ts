@@ -20,7 +20,7 @@ import { DealsService } from '../services/deals.service';
 import { DocPipe } from '../pipes/doc.pipe';
 
 // Components
-import { ComponentsModule } from '../components/components.module';
+import { DealsCardComponent } from '../components/deals-card/deals-card';
 
 const config = {
   apiKey: "AIzaSyD_TECDbtRmwJTSGJcZQ85Q5YLuNdjRtdY",
@@ -35,12 +35,12 @@ const config = {
   declarations: [
     FloWi,
     HubPage,
-    DocPipe
+    DocPipe,
+    DealsCardComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(FloWi),
-    ComponentsModule,
     AngularFireModule.initializeApp(config, 'flowi'),
     AngularFirestoreModule.enablePersistence(),
     BrowserAnimationsModule
