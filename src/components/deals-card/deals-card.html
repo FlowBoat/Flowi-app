@@ -2,8 +2,8 @@
   *ngIf="visible"
   [@cardAnimator]="animationState"
   (@cardAnimator.done)="resetAnimationState()"
-  (swipeleft)="leftSwipe()"
-  (swiperight)="rightSwipe()">
+  (swipeleft)="startAnimation('slideOutLeft')"
+  (swiperight)="startAnimation('zoomOutRight')">
   <ion-item>
     <ion-avatar item-start>
       <img [src]="deal.image.src">

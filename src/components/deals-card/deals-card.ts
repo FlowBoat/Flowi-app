@@ -23,16 +23,6 @@ export class DealsCardComponent {
 
   animationState: string;
 
-  rightSwipe() {
-    this.startAnimation('zoomOutRight');
-    this.onAction.emit({ actionType: 'view', deal: this.deal });
-  }
-
-  leftSwipe() {
-    this.startAnimation('slideOutLeft');
-    this.onAction.emit({ actionType: 'remove', deal: this.deal });
-  }
-
   startAnimation(state) {
     console.log(state);
     if(!this.animationState){
@@ -42,7 +32,10 @@ export class DealsCardComponent {
 
   resetAnimationState() {
     if (this.animationState === 'slideOutLeft') {
+      this.onAction.emit({ actionType: 'remove', deal: this.deal });
       this.visible = false;
+    } else if (this.animationState === 'zoomOutRight') {
+      this.onAction.emit({ actionType: 'view', deal: this.deal });
     }
     this.animationState = '';
   }
