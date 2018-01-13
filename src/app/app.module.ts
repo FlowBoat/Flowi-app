@@ -12,7 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 // Services
-import { FirestoreService } from '../shared/firestore.service';
+import { FirestoreService } from '../services/firestore.service';
 
 const config = {
   apiKey: "AIzaSyD_TECDbtRmwJTSGJcZQ85Q5YLuNdjRtdY",
@@ -43,7 +43,7 @@ const config = {
     StatusBar,
     SplashScreen,
     FirestoreService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

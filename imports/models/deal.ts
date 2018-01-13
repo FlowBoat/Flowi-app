@@ -1,6 +1,6 @@
 import * as firebase from "firebase";
 import { DealType } from './dealType';
-import { DocPredicate } from '../../src/shared/firestore.service';
+import { DocPredicate } from '../../src/services/firestore.service';
 
 export interface Deal {
   business: DocPredicate<any>;

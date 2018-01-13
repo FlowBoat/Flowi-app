@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 // Services
-import { FirestoreService } from '../../shared/firestore.service';
+import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'page-hub',
@@ -11,7 +11,6 @@ import { FirestoreService } from '../../shared/firestore.service';
 export class HubPage {
 
   constructor(public navCtrl: NavController, private db: FirestoreService) {
-
   }
 
 }

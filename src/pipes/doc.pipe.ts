@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { FirestoreService } from "../../shared/firestore.service";
+import { FirestoreService } from '../services/firestore.service';
 import { Observable } from "rxjs/Observable";
 
 @Pipe({
