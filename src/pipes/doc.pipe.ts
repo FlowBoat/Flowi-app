@@ -11,7 +11,6 @@ export class DocPipe implements PipeTransform {
    transform(value: any): Observable<any> {
      return this.db.doc$(value.path);
    }
-
 }
 
 /**
