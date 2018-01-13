@@ -4,14 +4,14 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { FloWi } from './app.component';
+
 // Firebase
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 
 // Services
 import { FirestoreService } from '../shared/firestore.service';
-
-import { FloWi } from './app.component';
 
 const config = {
   apiKey: "AIzaSyD_TECDbtRmwJTSGJcZQ85Q5YLuNdjRtdY",
@@ -31,7 +31,6 @@ const config = {
     IonicModule.forRoot(FloWi),
     AngularFireModule.initializeApp(config, 'flowi'),
     AngularFirestoreModule,
-    FirestoreService
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,6 +39,7 @@ const config = {
   providers: [
     StatusBar,
     SplashScreen,
+    FirestoreService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
