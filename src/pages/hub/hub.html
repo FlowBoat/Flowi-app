@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <deals-card *ngFor="let deal of deals | async" [deal]="deal"></deals-card>
+  <deals-card (onAction)="onAction($event)" *ngFor="let deal of deals | async" [deal]="deal"></deals-card>
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { DealsService } from '../../services/deals.service';
 import { Deal } from '../../../imports/models/deal';
+import { DealAction } from '../../../imports/models/dealAction';
 
 @Component({
   selector: 'page-hub',
@@ -19,6 +20,14 @@ export class HubPage implements OnInit{
 
   ngOnInit() {
     this.deals = this.dealsService.getDeals();
+  }
+
+  onAction(dealAction: DealAction){
+    if (dealAction.actionType === 'view') {
+      console.log('View ' + dealAction.deal.name);
+    } else {
+      console.log('Removed ' + dealAction.deal.name + ' from consumer view');
+    }
   }
 
   // This currently does nothing as we are loading all deals onInit
