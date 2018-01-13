@@ -5,3 +5,7 @@ page-home {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.no-scroll .scroll-content {
+  overflow: hidden;
+}

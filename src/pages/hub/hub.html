@@ -4,18 +4,29 @@
       Flowi
     </ion-title>
   </ion-navbar>
-</ion-header>
-
-<ion-content padding>
   <ion-searchbar
     [(ngModel)]="filterInput"
     [showCancelButton]="shouldShowCancel"
     animated="true"
     placeholder="Filter">
   </ion-searchbar>
-  <ion-list>
-    <ion-item *ngFor="let deal of deals | async">{{deal.name}}</ion-item>
-  </ion-list>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let deal of deals | async">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="deal.image.src">
+      </ion-avatar>
+      <h2>{{ (deal.business | doc | async)?.name }}</h2>
+      <p>{{ deal.createdAt.toDateString() }}</p>
+    </ion-item>
+
+    <img [src]="deal.image.src">
+
+    <ion-card-header>{{ deal.name }}</ion-card-header>
+    <ion-card-content><p>{{ deal.description }}</p></ion-card-content>
+  </ion-card>
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
